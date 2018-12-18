@@ -17,6 +17,8 @@
     <div>vuex state: {{ getCount.count }}</div>
     <br>
     <button v-if="!dis" @click="getAsyncData">打印button async await</button>
+    <br><br>
+    <button @click="getUtilsData">utils button</button>
   </div>
 </template>
 
@@ -24,6 +26,9 @@
 import { mapGetters } from 'vuex'
 import store from '@/store'
 import api from '@/services/api'
+import utils from '@/utils'
+import Parent from '@/utils/parent'
+import Child from '@/utils/child'
 export default {
   data () {
     return {
@@ -48,6 +53,13 @@ export default {
       // this.newMsgWatch = 'wqrq2qwqerwr'
       store.commit('increment')
       // console.log(this.getCount)
+    },
+    getUtilsData () {
+      utils.aaa()
+      let p = new Parent('hello', '22')
+      p.say()
+      let child = new Child('aa', 'bb', 'cc')
+      child.sayHello()
     },
     async getAsyncData () {
       var sync = await api.axiosPostQuery(process.env.API_HOST + '/loan-product/detail', {'id': '4'}).then()
