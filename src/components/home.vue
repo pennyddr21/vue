@@ -27,6 +27,7 @@ import { mapGetters } from 'vuex'
 import store from '@/store'
 import api from '@/services/api'
 import utils from '@/utils'
+// import { bbb } from '@/utils'
 import Parent from '@/utils/parent'
 import Child from '@/utils/child'
 export default {
@@ -55,7 +56,8 @@ export default {
       // console.log(this.getCount)
     },
     getUtilsData () {
-      utils.aaa()
+      // utils.aaa()
+      utils.bbb()
       let p = new Parent('hello', '22')
       p.say()
       let child = new Child('aa', 'bb', 'cc')
