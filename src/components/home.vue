@@ -19,6 +19,8 @@
     <button v-if="!dis" @click="getAsyncData">打印button async await</button>
     <br><br>
     <button @click="getUtilsData">utils button</button>
+    <br><br>
+    <button @click="linksUrl">links button</button>
   </div>
 </template>
 
@@ -53,6 +55,10 @@ export default {
       // this.newMsgWatch = 'wqrq2qwqerwr'
       store.commit('increment')
       // console.log(this.getCount)
+    },
+    linksUrl () {
+      // console.log(this.$router)
+      this.$router.push({name: 'phone', params: {id: 333}})
     },
     getUtilsData () {
       utils.aaa()

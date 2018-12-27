@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <br>
+    <div>router link get params : {{ $route.params.id }}</div>
   </div>
 </template>
 
